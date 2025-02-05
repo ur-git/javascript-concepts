@@ -111,7 +111,3 @@ if (true) {
 ✅ **Use `let` and `const` instead of `var`.**
 ✅ **Declare variables at the top of their scope.**
 ✅ **Use function expressions for better control over execution order.**
-
----
-
-With this understanding, let's now explore practical examples of hoisting in action!

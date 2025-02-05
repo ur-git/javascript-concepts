@@ -1,7 +1,3 @@
-Here are the notes from the transcript in markdown format:
-
----
-
 # **Scoping & Scope Chain in JavaScript**
 
 ## **Introduction**
@@ -140,7 +136,3 @@ first();
 5. **Scope chain is different from the call stack**.
    - **Scope chain is based on where functions are defined**.
    - **Call stack is based on the order of function calls**.
-
----
-
-This markdown file neatly summarizes the concepts discussed in the lecture while keeping the content **precise and expert-level**. Let me know if you need any modifications! 🚀

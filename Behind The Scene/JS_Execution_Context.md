@@ -90,5 +90,3 @@ let x = first();
 - **The call stack** manages execution contexts in a **last-in, first-out (LIFO)** manner.
 - **Arrow functions** do not have their own `this` or `arguments`.
 - JavaScript execution halts until all functions are finished.
-
-Understanding execution contexts and the call stack is crucial for writing efficient JavaScript and debugging errors effectively.
