@@ -1,7 +1,3 @@
-Here are the markdown notes for the Object-Oriented Programming (OOP) lecture in JavaScript:
-
----
-
 # **Object-Oriented Programming (OOP) in JavaScript**
 
 ## **Introduction**

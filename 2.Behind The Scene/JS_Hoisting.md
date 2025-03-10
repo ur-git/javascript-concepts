@@ -1,17 +1,5 @@
 # Understanding Hoisting in JavaScript
 
-## Execution Context Recap
-
-Every execution context in JavaScript contains three essential parts:
-
-- **Variable Environment**
-- **Scope Chain**
-- **`this` Keyword**
-
-We've previously explored the scope chain. Now, let's dive into the **Variable Environment** and how variables are created in JavaScript.
-
-## What is Hoisting?
-
 Hoisting is a mechanism in JavaScript where some types of variables can be accessed before they are declared. Many mistakenly believe that hoisting moves variables to the top of their scope, but in reality:
 
 - The JavaScript engine **scans** for variable declarations before executing the code.
@@ -23,8 +11,7 @@ However, hoisting works differently depending on the type of variable or functio
 
 ### 1. Function Declarations
 
-✅ **Hoisted with full definition**
-
+- **Hoisted with full definition**
 - Stored in the variable environment **before execution**.
 - Can be used **before** they are declared in the code.
 - **Block-scoped** in **strict mode** (otherwise function-scoped).
@@ -38,8 +25,7 @@ function sayHello() {
 
 ### 2. `var` Variables
 
-✅ **Hoisted but initialized as `undefined`**
-
+- **Hoisted but initialized as `undefined`**
 - When accessed before declaration, returns `undefined`.
 - A common source of bugs.
 - Not recommended in modern JavaScript.
@@ -51,8 +37,7 @@ var name = "John";
 
 ### 3. `let` and `const` Variables
 
-🚫 **Hoisted but uninitialized (Temporal Dead Zone)**
-
+- **Hoisted but uninitialized (Temporal Dead Zone)**
 - Accessing them before declaration results in a **ReferenceError**.
 - **Block-scoped**.
 - Recommended over `var`.
@@ -89,25 +74,7 @@ if (true) {
 }
 ```
 
-### Key Differences:
-
-- **Variables in the TDZ exist but are uninitialized.**
-- Trying to access them results in a **ReferenceError**.
-- If a variable does not exist at all, the error states it is "not defined".
-
 ## Why Does TDZ Exist?
 
-1. **Prevents silent bugs** – `var`'s `undefined` behavior is confusing.
-2. **Ensures `const` variables behave correctly** – They **must** be assigned when declared.
-
-## Why Does Hoisting Exist?
-
-- **Function hoisting** allows for more flexible code structure and mutual recursion.
-- **`var` hoisting** was an unintended side effect.
-- Modern JavaScript solves issues by using `let` and `const`.
-
-## Best Practices
-
-✅ **Use `let` and `const` instead of `var`.**
-✅ **Declare variables at the top of their scope.**
-✅ **Use function expressions for better control over execution order.**
+- **Prevents silent bugs** – `var`'s `undefined` behavior is confusing.
+- **Ensures `const` variables behave correctly** – They **must** be assigned when declared.

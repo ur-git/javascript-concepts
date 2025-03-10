@@ -1,8 +1,6 @@
-# Understanding and Controlling the `this` Keyword in JavaScript
+# **The `call` & `apply` Method in JavaScript**
 
-## Overview
-
-In this guide, we will revisit the `this` keyword and learn how to **manually set its value** using the `call`, `apply`, and `bind` methods. This enables us to control how functions behave in different contexts, particularly when reusing methods across multiple objects.
+Understanding the `this` keyword and learn how to **manually set its value** using the `call`, `apply`, and `bind` methods. This enables us to control how functions behave in different contexts, particularly when reusing methods across multiple objects.
 
 ---
 
@@ -23,7 +21,10 @@ const lufthansa = {
     console.log(
       `${passengerName} booked a seat on ${this.airline} flight ${this.iataCode}${flightNumber}`
     );
-    this.bookings.push({ flight: `${this.iataCode}${flightNumber}`, passengerName });
+    this.bookings.push({
+      flight: `${this.iataCode}${flightNumber}`,
+      passengerName,
+    });
   },
 };
 
@@ -34,6 +35,7 @@ console.log(lufthansa.bookings);
 ```
 
 Output:
+
 ```plaintext
 Jonas Schmedtmann booked a seat on Lufthansa flight LH239
 Mike Smith booked a seat on Lufthansa flight LH635
@@ -72,11 +74,13 @@ This error occurs because the `this` keyword in the `book` function points to `u
 The `call` method allows us to manually set the `this` keyword.
 
 ### Syntax
+
 ```javascript
 functionName.call(thisArg, arg1, arg2, ...);
 ```
 
 ### Example
+
 ```javascript
 book.call(eurowings, 23, "Sarah Williams");
 console.log(eurowings.bookings);
@@ -86,6 +90,7 @@ console.log(lufthansa.bookings);
 ```
 
 Output:
+
 ```plaintext
 Sarah Williams booked a seat on Eurowings flight EW23
 Mary Cooper booked a seat on Lufthansa flight LH239
@@ -98,11 +103,13 @@ Mary Cooper booked a seat on Lufthansa flight LH239
 The `apply` method works similarly to `call` but accepts an **array** of arguments instead of a list.
 
 ### Syntax
+
 ```javascript
 functionName.apply(thisArg, [arg1, arg2, ...]);
 ```
 
 ### Example
+
 ```javascript
 const flightData = [583, "George Cooper"];
 book.apply(eurowings, flightData);
@@ -110,6 +117,7 @@ console.log(eurowings.bookings);
 ```
 
 Output:
+
 ```plaintext
 George Cooper booked a seat on Eurowings flight EW583
 ```
