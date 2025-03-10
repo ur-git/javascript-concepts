@@ -1,138 +1,154 @@
-# Understanding Asynchronous JavaScript Behind the Scenes
+# Understanding Asynchronous JavaScript
 
-## JavaScript Runtime Overview
+# Async/Await in JavaScript
 
-A **JavaScript runtime** is an environment that contains all the necessary components to execute JavaScript code. It consists of:
+## **Introduction**
 
-1. **JavaScript Engine** – Executes code and manages memory.
-
-   - **Call Stack** – Tracks function calls and execution.
-   - **Heap** – Stores objects and data.
-
-2. **Web APIs Environment** – Provides asynchronous capabilities (not part of the JavaScript language).
-
-   - Examples: **DOM**, **Timers**, **Fetch API**, **Geolocation API**.
-
-3. **Callback Queue** – Stores **callbacks** (event-related functions) waiting to be executed.
-
-4. **Event Loop** – Coordinates execution by moving tasks from the callback queue to the call stack when it's empty.
-
-### JavaScript's Single-Threaded Nature
-
-- JavaScript has only **one thread of execution**.
-- It executes one task at a time (no multitasking).
-- Asynchronous behavior enables **non-blocking execution**.
+- Introduced in **ES2017**, `async/await` provides a better way to consume promises.
+- It makes asynchronous code **look synchronous** while running **in the background**.
+- `async` functions **always return a promise**.
 
 ---
 
-## How Asynchronous JavaScript Works
+## **Creating an Async Function**
 
-### Example: Loading an Image and Fetching Data
+- To define an **async function**, add `async` before the function declaration.
+- The function **executes asynchronously**, meaning:
+  - It **does not block** the main thread.
+  - It **returns a promise** that resolves when execution completes.
 
 ```js
-const img = document.querySelector("img");
-img.src = "dog.jpg"; // Asynchronous image loading
-
-img.addEventListener("load", () => {
-  console.log("Image loaded"); // Callback for load event
-});
-
-fetch("https://api.example.com/data")
-  .then((response) => response.json())
-  .then((data) => console.log(data)); // Fetch API (returns a promise)
+async function whereAmI(country) {
+  const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
+  console.log(res);
+}
 ```
 
-### Execution Breakdown:
+## **The `await` Keyword**
 
-1. **DOM Manipulation**
-
-   - Setting `img.src` starts **asynchronous** loading (handled in Web API environment).
-
-2. **Event Listener Registration**
-
-   - `addEventListener` registers a **callback** for the `load` event.
-   - The callback stays in **Web API environment** until the event occurs.
-
-3. **AJAX Request Using `fetch()`**
-   - The `fetch()` function initiates an **AJAX call** asynchronously.
-   - It returns a **Promise**, which moves to the **Microtask Queue**.
-
----
-
-## Understanding the JavaScript Event Loop
-
-### The Event Loop Process
-
-1. **Call Stack Execution**
-
-   - Runs all synchronous code first.
-
-2. **Web APIs Handle Asynchronous Tasks**
-
-   - Image loads and AJAX call happen in **Web APIs environment**.
-
-3. **Callback Queue & Event Loop**
-
-   - Once the image loads, the **callback is moved to the callback queue**.
-   - The **event loop checks the call stack**.
-   - If the stack is empty, it moves the **next callback** from the queue to the stack.
-
-4. **Microtask Queue Priority**
-   - Promises use a **Microtask Queue**, which has **higher priority** than the callback queue.
-   - Before processing regular callbacks, **microtasks must be completed**.
-
----
-
-## Example: Callback Queue vs. Microtask Queue
+- Used to **pause execution** of an `async` function **until a promise is resolved**.
+- Can only be used inside `async` functions.
+- **Behind the scenes:**
+  - `fetch()` returns a **promise**.
+  - `await fetch()` **pauses execution** until resolved.
+  - The **resolved value** is stored in `res`.
+  - `res.json()` also returns a **promise**, requiring another `await`.
 
 ```js
-setTimeout(() => console.log("Timer callback"), 0);
-
-Promise.resolve().then(() => console.log("Promise resolved"));
-
-console.log("Synchronous log");
+async function whereAmI(country) {
+  const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
+  const data = await res.json();
+  console.log(data[0]);
+}
 ```
 
-### Execution Order:
+---
 
-1. **Synchronous Log** → `"Synchronous log"`
-2. **Microtask (Promise)** → `"Promise resolved"`
-3. **Callback Queue (setTimeout)** → `"Timer callback"`
+## **Async Functions Are Non-Blocking**
 
-### Explanation:
+- Even though `await` **pauses execution**, the rest of the script **continues running**.
+- The `async` function runs in the **background**, **not blocking** the main thread.
 
-- `setTimeout` places its callback in the **callback queue**.
-- `Promise.resolve().then()` places its callback in the **microtask queue** (executed before regular callbacks).
-- The event loop ensures **microtasks run first** before handling callback queue tasks.
+```js
+console.log("FIRST");
+whereAmI("Portugal");
+console.log("SECOND");
+```
+
+**Output:**
+
+```
+FIRST
+SECOND
+{ country data }  // Appears after the fetch completes
+```
 
 ---
 
-## Key Takeaways
+## **Async/Await vs Promises**
 
-1. **JavaScript is Single-Threaded**
+- **Traditional Promise-based Approach:**
 
-   - It executes one task at a time in the **call stack**.
+```js
+getPosition()
+  .then((pos) =>
+    fetch(
+      `https://geocode.xyz/${pos.coords.latitude},${pos.coords.longitude}?geoit=json`
+    )
+  )
+  .then((res) => res.json())
+  .then((dataGeo) =>
+    fetch(`https://restcountries.com/v3.1/name/${dataGeo.country}`)
+  )
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+```
 
-2. **Asynchronous Code Uses Web APIs**
+- **With Async/Await:**
 
-   - Asynchronous operations (e.g., **fetch, setTimeout, event listeners**) run in **Web APIs environment**.
+```js
+async function whereAmI() {
+  const pos = await getPosition();
+  const resGeo = await fetch(
+    `https://geocode.xyz/${pos.coords.latitude},${pos.coords.longitude}?geoit=json`
+  );
+  const dataGeo = await resGeo.json();
 
-3. **Event Loop Manages Execution Order**
+  const res = await fetch(
+    `https://restcountries.com/v3.1/name/${dataGeo.country}`
+  );
+  const data = await res.json();
 
-   - Moves **callbacks** from the **callback queue** to the **call stack**.
-
-4. **Microtask Queue Has Priority**
-
-   - **Promises use the microtask queue**, which executes **before** the callback queue.
-
-5. **Timers are Not Guaranteed to Run Immediately**
-   - `setTimeout(fn, 5000)` does not guarantee execution **exactly** after 5 seconds.
-   - It runs only **after the call stack is empty** and **other microtasks have completed**.
+  console.log(data);
+}
+```
 
 ---
 
-## Why This Matters
+## **Handling Errors with Try/Catch**
 
-- **Improves Debugging**: Helps understand why certain callbacks run before others.
-- **Optimizes Performance**: Using microtasks effectively can improve execution efficiency.
-- **Aces Job Interviews**: Many developers lack deep understanding of the **event loop** and **queues**.
+- `await` does **not** have `.catch()`, so use `try...catch` for error handling.
+- Prevents **unhandled promise rejections**.
+- Catches **network failures** and **invalid responses**.
+
+```js
+async function whereAmI() {
+  try {
+    const pos = await getPosition();
+    const resGeo = await fetch(
+      `https://geocode.xyz/${pos.coords.latitude},${pos.coords.longitude}?geoit=json`
+    );
+
+    if (!resGeo.ok) throw new Error("Problem getting location data");
+
+    const dataGeo = await resGeo.json();
+    const res = await fetch(
+      `https://restcountries.com/v3.1/name/${dataGeo.country}`
+    );
+
+    if (!res.ok) throw new Error("Country not found");
+
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.error(`💥 ${err.message}`);
+  }
+}
+```
+
+---
+
+## **Summary**
+
+| Feature           | Async/Await              | Promises (`.then()`) |
+| ----------------- | ------------------------ | -------------------- |
+| Readability       | **Easier to read/write** | More callbacks       |
+| Error Handling    | `try...catch`            | `.catch()` needed    |
+| Parallel Requests | `Promise.all()`          | `Promise.all()`      |
+| Blocking Behavior | Non-blocking             | Non-blocking         |
+
+### **Key Takeaways**
+
+- `async/await` **simplifies promise consumption** by making code look synchronous.
+- The **`await` keyword** pauses execution **inside an `async` function`**, but does not block the main thread.
+- Always wrap `await` calls in **`try...catch`** for **error handling**.
