@@ -5,7 +5,6 @@
 - What is JavaScript?
 - Is JavaScript a compiled or interpreted language?
 - Is JavaScript a case-sensitive language?
-- Is there any relation between Java and JavaScript?
 - What paradigm is JavaScript?
 - What are primitive data types?
 - What are the different ways to access object properties?
@@ -30,7 +29,7 @@
 
 ---
 
-### **3. Functions & Closures**
+### [**3. Functions & Closures**](./4.Functions)
 
 - What is a first-class function?
 - What is a first-order function?
@@ -201,3 +200,11 @@
 - What is an event loop?
 - What is a call stack?
 - What is an event queue?
+
+---
+
+## Resources
+
+- [Udemy JS Course](https://www.udemy.com/course/the-complete-javascript-course/?couponCode=ST1MT31025G3)
+- [Git Question Repository](https://github.com/sudheerj/javascript-interview-questions)
+- [Design Pattern Blog](https://www.patterns.dev/)
