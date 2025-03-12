@@ -1,6 +1,6 @@
 # Here's a structured categorization of the JavaScript questions based on their relevant concepts:
 
-### **1. JavaScript Basics**
+### [**1. JavaScript Basics**](./1.Fundamentals/JS_Basics.md)
 
 - What is JavaScript?
 - Is JavaScript a compiled or interpreted language?
@@ -8,7 +8,6 @@
 - What paradigm is JavaScript?
 - What are primitive data types?
 - What are the different ways to access object properties?
-- What are the function parameter rules?
 - What is the difference between a parameter and an argument?
 - What is the difference between internal and external JavaScript?
 - Is JavaScript faster than server-side scripts?
@@ -44,7 +43,7 @@
 
 ---
 
-### **4. Scope & Hoisting**
+### [**4. Scope & Hoisting**](./2.Behind%20The%20Scene)
 
 - What is scope in JavaScript?
 - What is hoisting?
@@ -56,7 +55,7 @@
 
 ---
 
-### **5. Callbacks, Promises & Async/Await**
+### [**5. Callbacks, Promises & Async/Await**](./7.Asynchronous)
 
 - What is a callback function?
 - Why do we need callbacks?
@@ -72,7 +71,7 @@
 
 ---
 
-### **6. Events & Event Handling**
+### [**6. Events & Event Handling**](./5.DOM)
 
 - What are events?
 - What is an event flow?
@@ -81,7 +80,6 @@
 - What is event delegation?
 - What is the `preventDefault` method?
 - What is the `stopPropagation` method?
-- What are the steps involved in `return false` usage?
 
 ---
 
@@ -124,7 +122,7 @@
 
 ---
 
-### **10. Memory Management & Optimization**
+### [**10. Memory Management & Optimization**](./2.Behind%20The%20Scene/JS_Memory_Management.md)
 
 - What is garbage collection in JavaScript?
 - What is memory leak and how can you prevent it?
