@@ -14,7 +14,7 @@
 
 ---
 
-### **2. Objects and Prototypes**
+### [**2. Objects and Prototypes**](./6.OOPS)
 
 - What are the possible ways to create objects in JavaScript?
 - What is a prototype chain?
@@ -33,13 +33,10 @@
 - What is a first-class function?
 - What is a first-order function?
 - What is a higher-order function?
-- What is a unary function?
 - What is a currying function?
 - What is a pure function?
 - What is a closure?
-- What are lambda expressions or arrow functions?
 - What is an IIFE (Immediately Invoked Function Expression)?
-- What is an anonymous function?
 
 ---
 
