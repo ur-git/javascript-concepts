@@ -57,14 +57,19 @@
 - What is a callback function?
 - Why do we need callbacks?
 - What is callback hell?
-- What is a promise?
-- Why do you need a promise?
+- What is the Event Loop in JavaScript, and how does it work?
+- What is the Event Loop in JavaScript, and how does it work?
+- What is the difference between setTimeout, setImmediate, and process.nextTick?
+- How does JavaScript handle asynchronous operations?
+- What is a Promise, and how does it work under the hood?
+- What is the difference between Promises and async/await?
 - What are the three states of a promise?
 - What is promise chaining?
 - What is `Promise.all`?
 - What is the purpose of the `race` method in promise?
 - What are the main rules of promise?
 - What is a callback in a callback?
+- How does requestAnimationFrame work in JavaScript?
 
 ---
 
@@ -155,6 +160,7 @@
 - What is destructuring assignment?
 - What are default values in destructuring assignment?
 - How do you swap variables using destructuring assignment?
+- What is the difference between CommonJS and ES6 Modules?
 
 ---
 
@@ -172,29 +178,33 @@
 
 ### **14. Performance Optimization & Best Practices**
 
-- What is tree shaking?
-- What is the need for tree shaking?
-- What is minification?
-- What are the advantages of minification?
+- What is tree shaking? What is the need for tree shaking?
+- What is minification? What are the advantages of minification?
 - What is obfuscation in JavaScript?
 - Why do you need obfuscation?
+- How do you structure a scalable frontend project?
+- What are Micro Frontends, and when should you use them?
+- How would you reduce First Contentful Paint (FCP) time?
+- Explain the difference between lazy loading and code splitting.
+- What security concerns do you address in a frontend app?
+- How do you handle CORS issues in a web app?
+- What are Web Workers, and how do they improve JavaScript performance?
+- How does JavaScript handle multi-threading and concurrency?
+- What is the difference between Debouncing and Throttling?
+- What is the difference between imperative and declarative programming in JavaScript?
+- How does JavaScript handle BigInt and floating-point precision?
 
 ---
 
 ### **15. Miscellaneous Topics**
 
 - What is JSON and its common operations?
-- What is a service worker?
 - What are PWAs?
 - What is a polyfill?
 - What is `eval`?
 - Is it recommended to use `eval`?
 - What is a decorator?
 - What is an iterator?
-- How does synchronous iteration work?
-- What is an event loop?
-- What is a call stack?
-- What is an event queue?
 
 ---
 
