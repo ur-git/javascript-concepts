@@ -1,4 +1,6 @@
-### **String Manipulation**
+# JS Common Problems Set
+
+## **String Manipulation**
 
 1. **Reverse a string without using built-in methods**
 
@@ -33,7 +35,7 @@
 
 ---
 
-### **Array Manipulation**
+## **Array Manipulation**
 
 9. **Find the largest number in an array**
 
@@ -88,7 +90,7 @@
 
 ---
 
-### **Object Manipulation**
+## **Object Manipulation**
 
 22. **Deep clone an object**
 
@@ -103,7 +105,7 @@
 
 ---
 
-### **Mathematical Computation**
+## **Mathematical Computation**
 
 25. **Find the factorial of a given number**
 
@@ -122,7 +124,7 @@
 
 ---
 
-### **Anagram & Frequency Matching**
+## **Anagram & Frequency Matching**
 
 29. **Group anagrams from an array of strings**
 
@@ -137,7 +139,7 @@
 
 ---
 
-### **Asynchronous Programming & Performance Optimization**
+## **Asynchronous Programming & Performance Optimization**
 
 32. **Implement a custom Promise**
 
