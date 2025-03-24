@@ -168,4 +168,14 @@
 38. **Implement an LRU (Least Recently Used) cache**
     - Design and implement an LRU cache with `get` and `set` methods that maintains the most recently used elements.
 
+## Leetcode
+
+- Two Sum - Given an array of integers and a target, return indices of two numbers that add up to the target.
+
+- Number of Good Pairs - Count pairs (i, j) where nums[i] == nums[j] and i < j.
+
+- Count the Number of Consistent Strings - Given a string array words and a string allowed, return the number of words that only contain characters from allowed.
+
+- Longest Consecutive Sequence - Given an unsorted array of integers, return the length of the longest consecutive sequence.
+
 ---
