@@ -1,4 +1,4 @@
-# CORS (Cross-Origin Resource Sharing) – Interview Notes
+# CORS (Cross-Origin Resource Sharing)
 
 CORS stands for **Cross-Origin Resource Sharing**. It is a **security mechanism implemented by web browsers** that restricts how resources on a web page can be requested from another **origin** (domain, protocol, or port) than the one the page originated from.
 
