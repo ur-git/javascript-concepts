@@ -1,181 +1,166 @@
-# JS Common Problems Set
+# Basic
 
-## **String Manipulation**
+1. **Reverse a String**
+   Input: `"hello"` → Output: `"olleh"`
 
-1. **Reverse a string without using built-in methods**
+2. **Check Palindrome**
+   Input: `"madam"` → Output: `true`
+   Input: `"hello"` → Output: `false`
 
-   - Implement a function that takes a string as input and returns the reversed version of the string without using JavaScript’s built-in `.reverse()` method.
+3. **FizzBuzz (1–15)**
+   Output: `1, 2, fizz, 4, buzz, fizz, 7, 8, fizz, buzz, 11, fizz, 13, 14, fizzbuzz`
 
-2. **Check if a given string is a palindrome**
+4. **Factorial of a Number**
+   Input: `5` → Output: `120`
 
-   - Write a function that determines whether a given string reads the same forward and backward (ignoring case and spaces).
+5. **Largest Number in an Array**
+   Input: `[2, 8, 1, 10, 6]` → Output: `10`
 
-3. **Find the longest word in a given sentence**
+6. **Count Occurrences of Characters in String**
+   Input: `"banana"` → Output: `{ b: 1, a: 3, n: 2 }`
 
-   - Given a sentence as a string, write a function to return the longest word in the sentence. If multiple words have the same length, return the first one encountered.
+7. **Sort Array Ascending**
+   Input: `[5, 1, 4, 2]` → Output: `[1, 2, 4, 5]`
 
-4. **Count the occurrences of each character in a string**
+8. **Sort Array Descending**
+   Input: `[5, 1, 4, 2]` → Output: `[5, 4, 2, 1]`
 
-   - Implement a function that takes a string as input and returns an object where the keys are characters, and the values are the number of times each character appears in the string.
+9. **Remove Duplicates from Array**
+   Input: `[1, 2, 2, 3, 4, 4]` → Output: `[1, 2, 3, 4]`
 
-5. **Check if a string contains balanced parentheses**
+10. **Max Consecutive 1’s**
+    Input: `[1, 1, 0, 1, 1, 1]` → Output: `3`
 
-   - Given a string containing only parentheses (`()`, `{}`, `[]`), write a function to determine if the brackets are properly balanced.
+11. **Filter Even Numbers**
+    Input: `[1, 2, 3, 4, 5, 6]` → Output: `[2, 4, 6]`
 
-6. **Find the first non-repeating character in a string**
+12. **Longest Word in a Sentence**
+    Input: `"I am learning JavaScript"` → Output: `"JavaScript"`
 
-   - Implement a function that returns the first character in a string that does not repeat. If all characters repeat, return `null`.
+13. **Reverse Words in a Sentence**
+    Input: `"I love coding"` → Output: `"coding love I"`
 
-7. **Reverse the order of words in a sentence without using built-in methods**
-
-   - Given a string containing multiple words, write a function to reverse the order of the words without using the `.reverse()` method.
-
-8. **Generate all permutations of a given string**
-   - Write a function that returns an array containing all possible permutations of a given string.
-
----
-
-## **Array Manipulation**
-
-9. **Find the largest number in an array**
-
-   - Implement a function that takes an array of numbers as input and returns the largest number.
-
-10. **Find the smallest missing number in an array of numbers from 1 to N**
-
-    - Given an array containing unique numbers from `1` to `N`, but missing one number, write a function to find the missing number.
-
-11. **Find the maximum count of consecutive 1s in a binary array**
-
-    - Write a function that takes an array of `0s` and `1s` and returns the maximum number of consecutive `1s`.
-
-12. **Find the Kth largest element in an array**
-
-    - Given an unsorted array and an integer `K`, implement a function to find the `K`th largest element without sorting the entire array.
-
-13. **Sort an array without using the built-in `.sort()` method**
-
-    - Implement a sorting algorithm (such as Bubble Sort or Quick Sort) to sort an array of numbers in ascending order.
-
-14. **Sort an array of numbers in ascending order**
-
-    - Write a function that sorts an array of numbers from smallest to largest.
-
-15. **Sort an array of numbers in descending order**
-
-    - Write a function that sorts an array of numbers from largest to smallest.
-
-16. **Remove duplicate elements from an array**
-
-    - Given an array with duplicate values, write a function that returns a new array with only unique values.
-
-17. **Flatten a nested array into a single-dimensional array**
-
-    - Implement a function that takes a deeply nested array and returns a flattened array without using built-in methods like `.flat()`.
-
-18. **Merge two sorted arrays into a single sorted array**
-
-    - Given two sorted arrays, write a function to merge them into one sorted array without using built-in sorting methods.
-
-19. **Find the intersection of two arrays**
-
-    - Write a function that returns an array containing only the common elements present in both given arrays.
-
-20. **Rotate an array by K steps**
-
-    - Implement a function that rotates an array to the right by `K` steps, where `K` is a non-negative integer.
-
-21. **Return only the even numbers from an array**
-    - Write a function that filters out and returns only even numbers from a given array.
+14. **Check Prime Number**
+    Input: `7` → Output: `true`
+    Input: `10` → Output: `false`
 
 ---
 
-## **Object Manipulation**
+# Intermediate
 
-22. **Deep clone an object**
+15. **Longest Substring Without Repeating Characters**
+    Input: `"abcabcbb"` → Output: `3` (`"abc"`)
 
-    - Implement a function that creates a deep copy of a given object, ensuring that nested objects and arrays are also cloned.
+16. **Flatten Nested Array**
+    Input: `[1, [2, [3, 4]], 5]` → Output: `[1, 2, 3, 4, 5]`
 
-23. **Convert a string input into an object**
+17. **Unique Objects in Array**
+    Input: `[{name:"sai"},{name:"sai"},{name:"Nang"}]`
+    Output: `[{name:"sai"},{name:"Nang"}]`
 
-    - Given a string representing an object (e.g., `"name:John, age:30"`), write a function to convert it into a JavaScript object.
+18. **Merge Two Sorted Arrays**
+    Input: `[0, 3, 4, 31]` and `[4, 6, 30]` → Output: `[0, 3, 4, 4, 6, 30, 31]`
 
-24. **Find unique objects in an array of objects**
-    - Given an array of objects, write a function that returns only unique objects based on specific properties.
+19. **Intersection of Two Arrays**
+    Input: `[1,2,3,4]` and `[3,4,5,6]` → Output: `[3,4]`
 
----
+20. **Rotate Array by K steps**
+    Input: `[1,2,3,4,5,6,7], k=3` → Output: `[5,6,7,1,2,3,4]`
 
-## **Mathematical Computation**
+21. **Balanced Parentheses Check**
+    Input: `"(()())"` → Output: `true`
+    Input: `"(()"` → Output: `false`
 
-25. **Find the factorial of a given number**
+22. **Group Anagrams**
+    Input: `["eat","tea","tan","ate","nat","bat"]`
+    Output: `[["eat","tea","ate"], ["tan","nat"], ["bat"]]`
 
-    - Implement a function that returns the factorial of a given number using both iterative and recursive approaches.
+23. **Check Squared Array Relationship**
+    Input: `[1,2,3]` and `[1,4,9]` → Output: `true`
+    Input: `[1,2,3]` and `[1,9]` → Output: `false`
 
-26. **Check if a given number is prime**
+24. **Largest Element in Nested Array**
+    Input: `[[3,4,58], [709,8,9,[10,11]], [111,2]]` → Output: `709`
 
-    - Write a function that determines whether a given number is a prime number.
+25. **Fibonacci Sequence up to N terms**
+    Input: `5` → Output: `[0,1,1,2,3]`
 
-27. **Return the Fibonacci sequence up to a given number of terms**
+26. **Convert String Path to Nested Object**
+    Input: `("a.b.c", "value")` → Output: `{a:{b:{c:"value"}}}`
 
-    - Implement a function that generates and returns the Fibonacci sequence up to `N` terms.
-
-28. **Find the maximum profit from stock prices**
-    - Given an array where each element represents the stock price on a particular day, write a function to determine the maximum possible profit by buying and selling once.
-
----
-
-## **Anagram & Frequency Matching**
-
-29. **Group anagrams from an array of strings**
-
-    - Given an array of words, write a function to group words that are anagrams of each other.
-
-30. **Check if two strings are anagrams**
-
-    - Implement a function that checks if two given strings are anagrams (i.e., they contain the same letters in a different order).
-
-31. **Check if every value in `arr1` has its corresponding squared value in `arr2` with the same frequency**
-    - Given two arrays, write a function that returns `true` if every number in `arr1` has its squared value present in `arr2` with the same frequency.
+27. **3rd Least Occurred Number**
+    Input: `[4,4,2,2,3,3,3,1,1,1,1]` → Output: `2`
 
 ---
 
-## **Asynchronous Programming & Performance Optimization**
+# Advanced JavaScript
 
-32. **Implement a custom Promise**
+28. **Deep Clone an Object**
+    Input: `{a:1, b:{c:2}}` → Output: Deeply cloned copy
 
-    - Write a basic implementation of JavaScript’s `Promise` class with `resolve` and `reject` functionality.
+29. **Check Anagrams**
+    Input: `"listen"`, `"silent"` → Output: `true`
 
-33. **Write a polyfill for `Promise.all()`**
+30. **First Non-Repeating Character**
+    Input: `"swiss"` → Output: `"w"`
 
-    - Implement the `Promise.all()` function from scratch, which takes an array of promises and resolves when all of them resolve.
+31. **Smallest Missing Number (1 to N)**
+    Input: `[1,2,3,5]` → Output: `4`
 
-34. **Implement an event emitter (`on`, `off`, `emit`)**
+32. **Custom Promise Implementation**
+    Example:
 
-    - Build an event emitter that allows adding event listeners (`on`), removing them (`off`), and triggering them (`emit`).
+```js
+let p = new MyPromise((res, rej) => res(10));
+p.then((val) => console.log(val)); // 10
+```
 
-35. **Implement memoization in JavaScript**
+33. **Event Emitter**
+    Example:
 
-    - Write a function that optimizes performance by storing the results of expensive function calls and returning the cached result when the same inputs occur again.
+```js
+emitter.on("event", () => console.log("hi"));
+emitter.emit("event"); // hi
+```
 
-36. **Implement a debounce function**
+34. **Generate All Permutations of a String**
+    Input: `"abc"` → Output: `["abc","acb","bac","bca","cab","cba"]`
 
-    - Implement a debounce function that ensures a function executes only after a specified delay since the last invocation.
+35. **Kth Largest Element**
+    Input: `[3,2,1,5,6,4], k=2` → Output: `5`
 
-37. **Implement a throttle function**
+36. **Max Profit from Stock Prices**
+    Input: `[7,1,5,3,6,4]` → Output: `5`
 
-    - Implement a throttle function that ensures a function executes at most once every specified time interval.
+37. **Memoization Example**
+    Input: `fib(40)` → Output: computed faster with memoization
 
-38. **Implement an LRU (Least Recently Used) cache**
-    - Design and implement an LRU cache with `get` and `set` methods that maintains the most recently used elements.
+38. **Serialize & Deserialize Binary Tree**
+    Example:
+    Input: `Tree(1, left=2, right=3)` → `"1,2,#,#,3,#,#"`
 
-## Leetcode
+39. **Polyfill for `Array.map()`**
+    Input: `[1,2,3].myMap(x => x*2)` → Output: `[2,4,6]`
 
-- Two Sum - Given an array of integers and a target, return indices of two numbers that add up to the target.
+40. **Polyfill for `Promise.all()`**
+    Input: `[Promise.resolve(1), Promise.resolve(2)]`
+    Output: `[1,2]`
 
-- Number of Good Pairs - Count pairs (i, j) where nums[i] == nums[j] and i < j.
+41. **LRU Cache**
+    Example:
 
-- Count the Number of Consistent Strings - Given a string array words and a string allowed, return the number of words that only contain characters from allowed.
+```
+put(1,1)
+put(2,2)
+get(1) → 1
+put(3,3) // evicts key 2
+get(2) → -1
+```
 
-- Longest Consecutive Sequence - Given an unsorted array of integers, return the length of the longest consecutive sequence.
+42. **Debounce Function**
+    Example: Prevents firing API calls on every keystroke.
+
+43. **Throttle Function**
+    Example: Ensures a function runs at most once every X ms.
 
 ---
