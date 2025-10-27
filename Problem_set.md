@@ -120,13 +120,16 @@
     Example:
     Input: `Tree(1, left=2, right=3)` → `"1,2,#,#,3,#,#"`
 
-36. **Debounce Function**
+36. **Given an array, return an array where the each value is the product of the next two items**
+    Input: `[3, 4, 5]` → Output `[20, 15, 12]`
+
+37. **Debounce Function**
     Example: Prevents firing API calls on every keystroke.
 
-37. **Throttle Function**
+38. **Throttle Function**
     Example: Ensures a function runs at most once every X ms.
 
-38. **Custom Promise Implementation**
+39. **Custom Promise Implementation**
     Example:
 
 ```js
@@ -134,7 +137,7 @@ let p = new MyPromise((res, rej) => res(10));
 p.then((val) => console.log(val)); // 10
 ```
 
-39. **Event Emitter**
+40. **Event Emitter**
     Example:
 
 ```js
@@ -142,10 +145,10 @@ emitter.on("event", () => console.log("hi"));
 emitter.emit("event"); // hi
 ```
 
-40. **Polyfill for `Array.map()`**
+41. **Polyfill for `Array.map()`**
     Input: `[1,2,3].myMap(x => x*2)` → Output: `[2,4,6]`
 
-41. **Polyfill for `Promise.all()`**
+42. **Polyfill for `Promise.all()`**
     Input: `[Promise.resolve(1), Promise.resolve(2)]`
     Output: `[1,2]`
 
