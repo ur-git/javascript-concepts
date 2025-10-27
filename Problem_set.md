@@ -107,7 +107,26 @@
 31. **Smallest Missing Number (1 to N)**
     Input: `[1,2,3,5]` → Output: `4`
 
-32. **Custom Promise Implementation**
+32. **Generate All Permutations of a String**
+    Input: `"abc"` → Output: `["abc","acb","bac","bca","cab","cba"]`
+
+33. **Kth Largest Element**
+    Input: `[3,2,1,5,6,4], k=2` → Output: `5`
+
+34. **Max Profit from Stock Prices**
+    Input: `[7,1,5,3,6,4]` → Output: `5`
+
+35. **Serialize & Deserialize Binary Tree**
+    Example:
+    Input: `Tree(1, left=2, right=3)` → `"1,2,#,#,3,#,#"`
+
+36. **Debounce Function**
+    Example: Prevents firing API calls on every keystroke.
+
+37. **Throttle Function**
+    Example: Ensures a function runs at most once every X ms.
+
+38. **Custom Promise Implementation**
     Example:
 
 ```js
@@ -115,7 +134,7 @@ let p = new MyPromise((res, rej) => res(10));
 p.then((val) => console.log(val)); // 10
 ```
 
-33. **Event Emitter**
+39. **Event Emitter**
     Example:
 
 ```js
@@ -123,44 +142,11 @@ emitter.on("event", () => console.log("hi"));
 emitter.emit("event"); // hi
 ```
 
-34. **Generate All Permutations of a String**
-    Input: `"abc"` → Output: `["abc","acb","bac","bca","cab","cba"]`
-
-35. **Kth Largest Element**
-    Input: `[3,2,1,5,6,4], k=2` → Output: `5`
-
-36. **Max Profit from Stock Prices**
-    Input: `[7,1,5,3,6,4]` → Output: `5`
-
-37. **Memoization Example**
-    Input: `fib(40)` → Output: computed faster with memoization
-
-38. **Serialize & Deserialize Binary Tree**
-    Example:
-    Input: `Tree(1, left=2, right=3)` → `"1,2,#,#,3,#,#"`
-
-39. **Polyfill for `Array.map()`**
+40. **Polyfill for `Array.map()`**
     Input: `[1,2,3].myMap(x => x*2)` → Output: `[2,4,6]`
 
-40. **Polyfill for `Promise.all()`**
+41. **Polyfill for `Promise.all()`**
     Input: `[Promise.resolve(1), Promise.resolve(2)]`
     Output: `[1,2]`
-
-41. **LRU Cache**
-    Example:
-
-```
-put(1,1)
-put(2,2)
-get(1) → 1
-put(3,3) // evicts key 2
-get(2) → -1
-```
-
-42. **Debounce Function**
-    Example: Prevents firing API calls on every keystroke.
-
-43. **Throttle Function**
-    Example: Ensures a function runs at most once every X ms.
 
 ---
