@@ -71,9 +71,8 @@
     Input: `"(()())"` → Output: `true`
     Input: `"(()"` → Output: `false`
 
-22. **Group Anagrams**
-    Input: `["eat","tea","tan","ate","nat","bat"]`
-    Output: `[["eat","tea","ate"], ["tan","nat"], ["bat"]]`
+22. **First Non-Repeating Character**
+    Input: `"swiss"` → Output: `"w"`
 
 23. **Check Squared Array Relationship**
     Input: `[1,2,3]` and `[1,4,9]` → Output: `true`
@@ -85,27 +84,28 @@
 25. **Fibonacci Sequence up to N terms**
     Input: `5` → Output: `[0,1,1,2,3]`
 
-26. **Convert String Path to Nested Object**
-    Input: `("a.b.c", "value")` → Output: `{a:{b:{c:"value"}}}`
+26. **Smallest Missing Number (1 to N)**
+    Input: `[1,2,3,5]` → Output: `4`
 
-27. **3rd Least Occurred Number**
-    Input: `[4,4,2,2,3,3,3,1,1,1,1]` → Output: `2`
+27. **Check Anagrams**
+    Input: `"listen"`, `"silent"` → Output: `true`
+
+28. **Given an array, return an array where the each value is the product of the next two items**
+    Input: `[3, 4, 5]` → Output `[20, 15, 12]`
+
+29. **Max Profit from Stock Prices**
+    Input: `[7,1,5,3,6,4]` → Output: `5`
 
 ---
 
 # Advanced JavaScript
 
-28. **Deep Clone an Object**
-    Input: `{a:1, b:{c:2}}` → Output: Deeply cloned copy
+30. **Group Anagrams**
+    Input: `["eat","tea","tan","ate","nat","bat"]`
+    Output: `[["eat","tea","ate"], ["tan","nat"], ["bat"]]`
 
-29. **Check Anagrams**
-    Input: `"listen"`, `"silent"` → Output: `true`
-
-30. **First Non-Repeating Character**
-    Input: `"swiss"` → Output: `"w"`
-
-31. **Smallest Missing Number (1 to N)**
-    Input: `[1,2,3,5]` → Output: `4`
+31. **Convert String Path to Nested Object**
+    Input: `("a.b.c", "value")` → Output: `{a:{b:{c:"value"}}}`
 
 32. **Generate All Permutations of a String**
     Input: `"abc"` → Output: `["abc","acb","bac","bca","cab","cba"]`
@@ -113,15 +113,15 @@
 33. **Kth Largest Element**
     Input: `[3,2,1,5,6,4], k=2` → Output: `5`
 
-34. **Max Profit from Stock Prices**
-    Input: `[7,1,5,3,6,4]` → Output: `5`
+34. **3rd Least Occurred Number**
+    Input: `[4,4,2,2,3,3,3,1,1,1,1]` → Output: `2`
 
 35. **Serialize & Deserialize Binary Tree**
     Example:
     Input: `Tree(1, left=2, right=3)` → `"1,2,#,#,3,#,#"`
 
-36. **Given an array, return an array where the each value is the product of the next two items**
-    Input: `[3, 4, 5]` → Output `[20, 15, 12]`
+36. **Deep Clone an Object**
+    Input: `{a:1, b:{c:2}}` → Output: Deeply cloned copy
 
 37. **Debounce Function**
     Example: Prevents firing API calls on every keystroke.
